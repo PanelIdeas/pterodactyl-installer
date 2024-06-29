@@ -103,11 +103,20 @@ install_composer() {
 }
 
 ptdl_dl() {
+  cd
+  sudo npm cache clean -f
+  sudo npm install -g n
+  sudo n stable
   output "Downloading pterodactyl panel files .. "
   mkdir -p /var/www/pterodactyl
   cd /var/www/pterodactyl || exit
 
   git clone https://github.com/pyrohost/panel.git /var/www/pterodactyl
+  cd /var/www/pterodactyl
+  npm i
+  npm audit fix
+  npm install turbo
+  npm run ship
   chmod -R 755 storage/* bootstrap/cache/
 
   cp .env.example .env
