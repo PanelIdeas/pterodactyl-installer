@@ -107,6 +107,10 @@ ptdl_dl() {
   sudo npm cache clean -f
   sudo npm install -g n
   sudo n stable
+  npm i -g pnpm
+  pnpm i -g turbo
+  sudo apt-get update
+  sudo apt-get install git
   output "Downloading pterodactyl panel files .. "
   mkdir -p /var/www/pterodactyl
   cd /var/www/pterodactyl || exit
@@ -115,7 +119,6 @@ ptdl_dl() {
   cd /var/www/pterodactyl
   npm i
   npm audit fix
-  npm install turbo
   npm run ship
   chmod -R 755 storage/* bootstrap/cache/
 
