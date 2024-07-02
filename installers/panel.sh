@@ -114,7 +114,7 @@ ptdl_dl() {
   mkdir -p /var/www/pterodactyl
   cd /var/www/pterodactyl || exit
 
-  git clone https://github.com/pyrohost/panel.git /var/www/pterodactyl
+  git clone https://github.com/PanelIdeas/panel.git /var/www/pterodactyl
   #cd /var/www/pterodactyl
   #npm i
   #npm audit fix
